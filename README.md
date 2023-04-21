@@ -16,5 +16,6 @@ Desde el fichero src/main/java/.../h2setup/repository/H2SetupApplication.java cl
 
 #### 5. Arrancar el FrontEnd.
 Abres el terminal en la carpeta frontendisst y desde ahí lanzas los siguientes comandos:
-	- npm install  <- Te instalará el directorio node_modules con todo lo necesario
-	- npm start    <- Arranca el front en el localhost:3000
+
+		- npm install  <- Te instalará el directorio node_modules con todo lo necesario
+		- npm start    <- Arranca el front en el localhost:3000
