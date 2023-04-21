@@ -1,4 +1,4 @@
-# FrontEnd_BarrioCovid
+# BarrioCovid
 Repositorio en el que se alojara el codigo del backend y el frontend de nuestra aplicación.
 
 
