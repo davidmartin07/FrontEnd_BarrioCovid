@@ -5,7 +5,7 @@ Repositorio en el que se alojara el codigo del backend y el frontend de nuestra 
 ## Para arrancarlo: 
 
 #### 1. Arrancar el BackEnd.
-	Desde el fichero src/main/java/.../h2setup/repository/H2SetupApplication.java clicar en Run 	(para esto es necesaria la extension Spring Boot Dashboard e instalar lo que te dice la 	extensión).
+Desde el fichero src/main/java/.../h2setup/repository/H2SetupApplication.java clicar en Run 	(para esto es necesaria la extension Spring Boot Dashboard e instalar lo que te dice la 	extensión).
 
 #### 2. Acceder a localhost:8080/h2 en un navegador. 
 
@@ -15,6 +15,6 @@ Repositorio en el que se alojara el codigo del backend y el frontend de nuestra 
 
 
 #### 5. Arrancar el FrontEnd.
-	Abres el terminal en la carpeta frontendisst y desde ahí lanzas los siguientes comandos:
-		- npm install  <- Te instalará el directorio node_modules con todo lo necesario
-		- npm start    <- Arranca el front en el localhost:3000
+Abres el terminal en la carpeta frontendisst y desde ahí lanzas los siguientes comandos:
+	- npm install  <- Te instalará el directorio node_modules con todo lo necesario
+	- npm start    <- Arranca el front en el localhost:3000
