@@ -16,5 +16,5 @@ Repositorio en el que se alojara el codigo del backend y el frontend de nuestra 
 
 #### 5. Arrancar el FrontEnd.
 	Abres el terminal en la carpeta frontendisst y desde ahí lanzas los siguientes comandos:
-		- `npm install`  <- Te instalará el directorio node_modules con todo lo necesario
-		- `npm start`    <- Arranca el front en el localhost:3000
+		- npm install  <- Te instalará el directorio node_modules con todo lo necesario
+		- npm start    <- Arranca el front en el localhost:3000
