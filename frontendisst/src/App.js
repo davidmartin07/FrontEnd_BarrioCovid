@@ -10,6 +10,7 @@ import ProductList from "./ProductList";
 import Spinner from 'react-bootstrap/Spinner';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import Layout from "./Layout";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -33,12 +34,13 @@ function App() {
         <Spinner id="loading" className="spinner" animation="border" size="sm" />
       ) : (
         <BrowserRouter>
+        <Layout>
           <Routes>
             <Route path="/" element={<LoginPage />} />
 
             <Route path="/RegistroPage" element={<RegistroPage />} />
 
-            <Route path="/seleccionarTienda" element={<CompradorTiendas />} />
+            <Route path="/seleccionarTienda" element={<CompradorTiendas/>} />
             <Route path="/ProductList/tienda=:tiendaId" element={<ProductList id={idTienda}/>} />
             <Route path="/Pagar" element={<Pagar />} />
 
@@ -47,6 +49,7 @@ function App() {
             <Route path="/VoluntarioMenu/:idVoluntario" element={<VoluntarioMenu id={idVoluntario}/>} />
 
           </Routes>
+        </Layout>
         </BrowserRouter>
       )}
     </div>

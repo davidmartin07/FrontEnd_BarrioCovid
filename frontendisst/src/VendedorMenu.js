@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './VendedorMenu.css';
 
 function VendedorMenu(props) {
   const [pedidos, setPedidos] = useState([
@@ -77,53 +78,59 @@ function VendedorMenu(props) {
     });
     }
 
-  return (
-    <div>
-      <h1>Menú de Vendedor</h1>
-
-      <h2>Pedidos pendientes:</h2>
-      <ul>
-        {pedidos.map(pedido => (
-        <li key={pedido.id}>
-          <p>Comprador: {pedido.comprador}</p>
-          <p>Productos:</p>
-          <ul>
-            {pedido.productos.map(producto => (
-              <li key={producto}>{producto}</li>
-            ))}
-          </ul>
-          <button onClick={() => aceptarPedido(pedido.id)}>Aceptar</button>
-          <button onClick={() => rechazarPedido(pedido.id)}>Rechazar</button>
-        </li>
-       ))}
-      </ul>
-
-
-      <h2>Catálogo de productos:</h2>
-      <ul>
-      {productos.map(producto => (
-          <li key={producto.id}>
-            <p>Nombre: {producto.nombre}</p>
-            <p>Precio: {producto.precio}</p>
-          </li>
-        ))}
-      </ul>
-
-
-      <h3>Agregar nuevo producto:</h3>
-      <form onSubmit={agregarProducto}>
-        <div>
-          <label>Nombre:</label>
-          <input type="text" value={nombreProducto} onChange={e => setNombreProducto(e.target.value)} required />
+    return (
+      <div>
+        <h1>Menú de Vendedor</h1>
+    
+        <div className="container" style={{ display: "flex", flexDirection: "row" }}>
+          <div className="column" style={{ flexBasis: "50%" }}>
+            <h2>Pedidos pendientes:</h2>
+            <ul>
+              {pedidos.map((pedido) => (
+                <li key={pedido.id}>
+                  <p>Comprador: {pedido.comprador}</p>
+                  <p>Productos:</p>
+                  <ul>
+                    {pedido.productos.map((producto) => (
+                      <li key={producto}>{producto}</li>
+                    ))}
+                  </ul>
+                  <div>
+                    <button onClick={() => aceptarPedido(pedido.id)} style={{ display: "inline-block", marginRight: "10px" }}>Aceptar</button>
+                    <button onClick={() => rechazarPedido(pedido.id)} style={{ display: "inline-block" }} >Rechazar</button>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
-    <div>
-      <label>Precio:</label>
-      <input type="number" value={precio} onChange={e => setPrecio(e.target.value)} required />
-    </div>
-    <button type="submit">Agregar</button>
-  </form>
-</div>
-  );      
+          <div className="column">
+            <h2>Catálogo de productos:</h2>
+            <ul>
+              {productos.map((producto) => (
+                <li key={producto.nombre}>
+                  <p>Nombre: {producto.nombre}</p>
+                  <p>Precio: {producto.precio}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+    
+        <h3>Agregar nuevo producto:</h3>
+        <form onSubmit={agregarProducto}>
+          <div>
+            <label>Nombre:</label>
+            <input type="text" id="nombre" name="nombre" className="input" value={nombreProducto} onChange={(e) => setNombreProducto(e.target.value)} required />
+          </div>
+          <div>
+            <label>Precio:</label>
+            <input type="number" id="precio" name="precio" className="input" value={precio} onChange={(e) => setPrecio(e.target.value)} required />
+          </div>
+          <button type="submit">Agregar</button>
+        </form>
+      </div>
+    );
+          
 }
 
 export default VendedorMenu;

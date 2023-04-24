@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./VoluntarioMenu.css"
 
 const VoluntarioMenu = (props) => {
   const [orders, setOrders] = useState([
@@ -40,15 +41,15 @@ const VoluntarioMenu = (props) => {
 
   return (
     <div>
-      <h2>Lista de pedidos pendientes</h2>
-      <table>
+      <h1>Lista de pedidos pendientes</h1>
+      <table className="order-table">
         <thead>
           <tr>
             <th>Comprador</th>
             <th>Dirección</th>
             <th>Productos</th>
             <th>Estado</th>
-            <th>Confirmar entrega</th>
+            <th>Acción a realizar</th>
           </tr>
         </thead>
         <tbody>
@@ -68,7 +69,7 @@ const VoluntarioMenu = (props) => {
               <td>{order.delivered ? "Entregado" : "Pendiente"}</td>
               <td>
                 {!order.delivered && (
-                  <button onClick={() => handleDeliveryConfirmation(order.id)}>
+                  <button className="delivery-confirmation-button" onClick={() => handleDeliveryConfirmation(order.id)}>
                     Confirmar entrega
                   </button>
                 )}
